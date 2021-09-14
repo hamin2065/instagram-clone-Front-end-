@@ -21,6 +21,7 @@ const Subtitle = styled(FatLink)`
   text-align: center;
   margin-top: 10px;
 `;
+
 function SignUp() {
   return (
     <AuthLayout>
