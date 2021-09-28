@@ -31,7 +31,7 @@ function AuthLayout({ children }) {
     <Container>
       <Wrapper>{children}</Wrapper>
       <Footer>
-        <DarkModeBtn onClink={darkMode ? disableDarkMode : enableDarkMode}>
+        <DarkModeBtn onClick={darkMode ? disableDarkMode : enableDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
         </DarkModeBtn>
       </Footer>
