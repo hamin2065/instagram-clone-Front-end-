@@ -33,7 +33,7 @@ const CREATE_ACCOUNT_MUTATION = gql`
     $email: String!
     $password: String!
   ) {
-    createaAccount(
+    createAccount(
       firstName: $firstName
       lastName: $lastName
       username: $username

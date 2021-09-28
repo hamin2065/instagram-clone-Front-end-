@@ -6,7 +6,7 @@ const DARK_MODE = "DARK_MODE";
 export const isLoggedInVar = makeVar(Boolean(localStorage.getItem(TOKEN)));
 
 export const logUserIn = (token) => {
-  localStorage.removeItem(TOKEN, token);
+  localStorage.setItem(TOKEN, token);
   isLoggedInVar(true);
 };
 

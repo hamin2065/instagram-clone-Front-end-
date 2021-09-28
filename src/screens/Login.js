@@ -16,6 +16,7 @@ import Separator from "../components/auth/Separator";
 import PageTitle from "../components/PageTitle";
 import routes from "../routes";
 import { logUserIn } from "../apollo";
+import { useLocation } from "react-router";
 
 const FacebookLogin = styled.div`
   color: #385285;
@@ -36,6 +37,7 @@ const LOGIN_MUTATION = gql`
 `;
 
 function Login() {
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -46,6 +48,10 @@ function Login() {
     clearErrors,
   } = useForm({
     mode: "onChange",
+    defaultValues: {
+      username: location?.state?.username || "",
+      password: location?.state?.password || "",
+    },
   });
 
   const onCompleted = (data) => {
@@ -119,6 +125,7 @@ function Login() {
             value={loading ? "Loading..." : "Login"}
             disabled={!formState.isValid || loading}
           />
+          <FormError message={errors?.result?.message} />
         </form>
         <Separator>
           <div></div>
